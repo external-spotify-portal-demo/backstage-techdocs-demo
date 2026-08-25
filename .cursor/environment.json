@@ -1,0 +1,25 @@
+{
+  "name": "Backstage TechDocs Demo",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "user": "ubuntu",
+  "install": "chmod +x .cursor/install.sh && .cursor/install.sh",
+  "terminals": [
+    {
+      "name": "techdocs",
+      "command": "export PATH=\"$HOME/.local/bin:$PATH\" && techdocs-cli serve --no-docker"
+    }
+  ],
+  "ports": [
+    {
+      "name": "backstage",
+      "port": 3000
+    },
+    {
+      "name": "mkdocs",
+      "port": 8000
+    }
+  ]
+}
